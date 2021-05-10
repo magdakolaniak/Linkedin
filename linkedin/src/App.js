@@ -1,4 +1,5 @@
 
+
 import { Switch, Router, Route } from "react-router-dom";
 import "./App.css";
 import MyNavbar from "./components/MyNavbar";
@@ -16,6 +17,7 @@ function App() {
       <MyNavbar />
       <Profile userId="5fc4b02bb708c200175de890" />
       </div>
+
   );
 }
 
