@@ -1,4 +1,3 @@
-
 #headerComp {
   width: 100%;
 }
@@ -96,7 +95,6 @@
   color: #0a66c2;
 }
 
-
 .bg-navbar {
   background-color: white;
   margin-right: auto;
@@ -177,9 +175,8 @@
   font-weight: 400;
   line-height: 1.33333;
   padding-left: 20px;
-
+}
 
 #mainContent {
   padding-top: 110px;
-
 }
