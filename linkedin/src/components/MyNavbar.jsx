@@ -1,15 +1,20 @@
-import { Navbar, Row, Nav, Form, FormControl, Dropdown } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
 
-import { ImHome3 } from 'react-icons/im';
-import { BsFillPeopleFill } from 'react-icons/bs';
-import { MdWork } from 'react-icons/md';
-import { BiMessageRoundedDots } from 'react-icons/bi';
-import { MdNotifications } from 'react-icons/md';
-import { ImProfile } from 'react-icons/im';
-import { IoMdArrowDropdown } from 'react-icons/io';
-import { GiAbstract050 } from 'react-icons/gi';
+
+
+
+
+import { Navbar, Row, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
+import { ImHome3 } from "react-icons/im";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { MdWork } from "react-icons/md";
+import { BiMessageRoundedDots } from "react-icons/bi";
+import { MdNotifications } from "react-icons/md";
+import { ImProfile } from "react-icons/im";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { GiAbstract050 } from "react-icons/gi";
+
 
 const MyNavbar = () => (
   <div>
@@ -34,12 +39,16 @@ const MyNavbar = () => (
         </svg>
       </Navbar.Brand>
       <Form inline>
+
         <FormControl
           className="navbar-searching-style"
           type="text"
           placeholder="Search"
           className="mr-sm-2"
         />
+
+        
+
       </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mx-auto">
@@ -97,7 +106,10 @@ const MyNavbar = () => (
               </Dropdown.Menu>
               <Row className="mx-2 navbar-rows-text">
                 <p>
+
                   Me <IoMdArrowDropdown />{' '}
+
+                 
                 </p>
               </Row>
             </Dropdown>

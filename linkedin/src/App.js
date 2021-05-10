@@ -1,13 +1,23 @@
+
+
+import { Switch, Router, Route } from "react-router-dom";
+import "./App.css";
+import MyNavbar from "./components/MyNavbar";
+import "./index.css";
+import LateralProfiles from "./components/LateralProfiles";
+import { Switch, Router, Route } from "react-router-dom";
 import MyNavbar from './components/MyNavbar';
-import MyFooter from './components/MyFooter';
-import './App.css';
+import logo from "./logo.svg";
+
+import Profile from "./components/Profile.jsx";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <MyNavbar />
-      <MyFooter />
-    </div>
+      <Profile userId="5fc4b02bb708c200175de890" />
+      </div>
+
   );
 }
 
