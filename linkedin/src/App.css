@@ -1,3 +1,4 @@
+
 #headerComp {
   width: 100%;
 }
@@ -90,3 +91,38 @@
   color: rgb(97, 97, 97);
   margin-left: 15px;
 }
+
+
+.bg-navbar {
+  background-color: white;
+  margin-right: auto;
+  margin-left: auto;
+  max-height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.navbar-img-logo {
+  height: 60px;
+  margin-left: 150px;
+}
+.icons-navbar {
+  font-size: 20px;
+  color: rgb(114, 114, 114);
+}
+.navbar-rows-text {
+  color: rgb(114, 114, 114);
+  font-size: small;
+}
+.navbar-toggle-style {
+  background-color: white !important;
+  border: none !important;
+  padding: 0.175rem 0.25rem !important;
+}
+.navbar-last-one {
+  border-left-style: solid, border-left-s;
+}
+
+
+
