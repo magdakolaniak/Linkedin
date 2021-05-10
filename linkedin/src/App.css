@@ -3,6 +3,10 @@
   margin-right: auto;
   margin-left: auto;
   max-height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 .navbar-img-logo {
   height: 60px;

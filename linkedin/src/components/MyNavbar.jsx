@@ -13,7 +13,7 @@ import { GiAbstract050 } from 'react-icons/gi';
 
 const MyNavbar = () => (
   <div>
-    <Navbar className="bg-navbar" expand="lg">
+    <Navbar className="bg-navbar">
       <Navbar.Brand href="#home">
         <svg
           xmlns="http://www.w3.org/2000/svg"
