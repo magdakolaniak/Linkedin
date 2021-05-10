@@ -15,18 +15,32 @@ const Header = () => {
           src="/assets/images/profilepic.jpg"
           alt="rofile of me"
         />
+        <div id="message">
+          <button id="button">Message</button> <span>...</span>
+        </div>
       </div>
       <div id="lowerPart">
         <div id="leftSide">
-          <h3>Luis Antonio Canettoli Ordoñez</h3> <span>. 3rd</span>
-          <p>MERN Full Stack Developer | Teaching Assistant @ Strive School</p>
+          <p id="name">Luis Antonio Canettoli Ordoñez</p> <span>. 3rd</span>
+          <p id="jobTitle">
+            MERN Full Stack Developer | Teaching Assistant @ Strive School
+          </p>
           <ul>
             <li>address</li>
+            <li>.</li>
             <li>number of connections</li>
-            <li>contact info</li>
+            <li>.</li>
+            <li>
+              <a href="https://google.com">Contact info</a>
+            </li>
           </ul>
         </div>
         <div id="rightSide">
+          <img
+            src="/assets/images/strivelogo.jpg"
+            alt="company logo"
+            height="32px"
+          />
           <p>sdfssgsdgfsdfsdf</p>
         </div>
       </div>

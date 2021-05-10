@@ -1,5 +1,5 @@
 #headerComp {
-  width: 80%;
+  width: 100%;
 }
 
 #upperPart {
@@ -20,19 +20,73 @@
 #lowerPart {
   background-color: white;
   border-radius: 0 0 10px 10px;
-  height: 220px;
   display: flex;
-  padding-top: 40px;
+  padding-top: 60px;
+  padding-bottom: 20px;
 }
 
 #lowerPart #leftSide {
   width: 65%;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-#lowerPart #leftSide h3 {
+#lowerPart #leftSide #name {
   display: inline-block;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+#lowerPart #leftSide #jobTitle {
+  display: inline-block;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 
 #lowerPart #leftSide li {
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 10px;
+}
+#lowerPart #leftSide ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+#lowerPart #rightSide {
+  display: flex;
+}
+#lowerPart #rightSide p {
+  margin-top: 0;
+  margin-left: 15px;
+}
+#lowerPart #leftSide a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #0a66c2;
+}
+
+#upperPart #message {
+  position: relative;
+  left: 80%;
+  top: 55px;
+}
+
+#upperPart #message #button {
+  background-color: #ffffff;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 6px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 1px solid rgb(63, 63, 63);
+  border-radius: 17px;
+}
+
+#upperPart #message span {
+  font-weight: bold;
+  font-size: 28px;
+  color: rgb(97, 97, 97);
+  margin-left: 15px;
 }
