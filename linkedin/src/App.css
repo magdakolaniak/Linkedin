@@ -95,6 +95,46 @@
   color: #0a66c2;
 }
 
+#experiencesContainer {
+  background-color: white;
+  border-radius: 10px 10px 10px 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 0px 0px 1px 1px rgba(102, 102, 102, 0.31);
+  box-shadow: 0px 0px 1px 1px rgba(102, 102, 102, 0.31);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#experiencesContainer img {
+  margin-bottom: 30px;
+}
+p#expTitle {
+  font-size: 22px;
+}
+#descriptions {
+  margin-left: 25px;
+}
+
+#descriptions hr {
+  color: rgb(153, 153, 153);
+}
+
+#descriptions #position {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1px;
+}
+#descriptions #school {
+  font-size: 14px;
+  margin-bottom: 1px;
+}
+#descriptions #duration {
+  font-size: 14px;
+  margin-bottom: 1px;
+  color: rgb(156, 156, 156);
+}
+
 .bg-navbar {
   background-color: white;
   margin-right: auto;
@@ -104,6 +144,9 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 2;
+  -webkit-box-shadow: 0px 0px 1px 1px rgba(102, 102, 102, 0.31);
+  box-shadow: 0px 0px 1px 1px rgba(102, 102, 102, 0.31);
 }
 .navbar-img-logo {
   height: 60px;
@@ -128,19 +171,19 @@
 
 .footer-links {
   text-decoration: none;
-
   color: var(--cool-gray-70, #485d69);
   font-size: 12px;
   font-weight: 600;
   line-height: 1.33333;
 }
 .footer-main-row {
-  position: fixed;
-  bottom: 0;
+  /* position: fixed;
+  bottom: 0; */
   left: 150px;
   right: 100px;
   margin-bottom: 15px;
 }
+
 .icon-footer-logo {
   padding: 0.95rem;
 }
@@ -155,7 +198,6 @@
 .footer-links-language {
   color: var(--cool-gray-70, #485d69);
   font-size: 12px;
-
   line-height: 1.33333;
 }
 .icons-footer-style {
@@ -179,4 +221,5 @@
 
 #mainContent {
   padding-top: 110px;
+  margin-bottom: 70px;
 }
