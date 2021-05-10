@@ -1,0 +1,38 @@
+#headerComp {
+  width: 80%;
+}
+
+#upperPart {
+  height: 200px;
+  background-color: black;
+  border-radius: 10px 10px 0 0;
+}
+
+#profilePic {
+  height: 70%;
+  border-radius: 50%;
+  border: 3.5px solid white;
+  position: relative;
+  left: 20px;
+  bottom: -95px;
+}
+
+#lowerPart {
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  height: 220px;
+  display: flex;
+  padding-top: 40px;
+}
+
+#lowerPart #leftSide {
+  width: 65%;
+}
+#lowerPart #leftSide h3 {
+  display: inline-block;
+}
+
+#lowerPart #leftSide li {
+  display: inline-block;
+  margin-right: 20px;
+}
