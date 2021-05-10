@@ -1,15 +1,14 @@
-import { Navbar, Row, Nav, Form, FormControl, Dropdown } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-
-import { ImHome3 } from 'react-icons/im';
-import { BsFillPeopleFill } from 'react-icons/bs';
-import { MdWork } from 'react-icons/md';
-import { BiMessageRoundedDots } from 'react-icons/bi';
-import { MdNotifications } from 'react-icons/md';
-import { ImProfile } from 'react-icons/im';
-import { IoMdArrowDropdown } from 'react-icons/io';
-import { GiAbstract050 } from 'react-icons/gi';
+import { Navbar, Row, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
+import { ImHome3 } from "react-icons/im";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { MdWork } from "react-icons/md";
+import { BiMessageRoundedDots } from "react-icons/bi";
+import { MdNotifications } from "react-icons/md";
+import { ImProfile } from "react-icons/im";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { GiAbstract050 } from "react-icons/gi";
 
 const MyNavbar = () => (
   <div>
@@ -92,7 +91,7 @@ const MyNavbar = () => (
               </Dropdown.Menu>
               <Row className="mx-2 navbar-rows-text">
                 <p>
-                  Me <IoMdArrowDropdown />{' '}
+                  Me <IoMdArrowDropdown />{" "}
                 </p>
               </Row>
             </Dropdown>

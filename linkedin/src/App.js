@@ -1,20 +1,21 @@
 
+import { Switch, Router, Route } from "react-router-dom";
 import "./App.css";
+import MyNavbar from "./components/MyNavbar";
 import "./index.css";
 import LateralProfiles from "./components/LateralProfiles";
-
 import { Switch, Router, Route } from "react-router-dom";
 import MyNavbar from './components/MyNavbar';
 import logo from "./logo.svg";
+
 import Profile from "./components/Profile.jsx";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <MyNavbar />
-      <h1>Hello!</h1>
-      <LateralProfiles />
-    </div>
+      <Profile userId="5fc4b02bb708c200175de890" />
+      </div>
   );
 }
 
