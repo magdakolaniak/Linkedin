@@ -16,3 +16,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Beginning CSS Leonardo */
+
+#lateral-profile-main-container {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+#lateral-profile-user-image {
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+#lateral-profile-section-title {
+  font-size: 1.2em;
+}
+
+#lateral-profile-username {
+  color: #000000;
+  font-weight: 600;
+  font-size: 1em;
+  margin: 0px;
+}
+
+#lateral-profile-user-title {
+  color: #818181;
+  margin-top: 0px;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 0.7em;
+}
+
+#later-profile-follow-button {
+  padding: 2px 24px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  color: #1d1d1d;
+  font-weight: 600;
+  font-size: 1.2em;
+  border-radius: 50px;
+  background-color: transparent;
+}
+
+#lateral-profile-name-grade-separator {
+  margin: 0px 10px;
+}
+
+#lateral-profile-info-box {
+  margin-left: 20px;
+}
+/* End CSS Leonardo */
