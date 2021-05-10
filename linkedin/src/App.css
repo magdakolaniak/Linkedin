@@ -56,7 +56,7 @@
   display: flex;
 }
 #lowerPart #rightSide p {
-  margin-top: 0;
+  margin-top: 5px;
   margin-left: 15px;
 }
 #lowerPart #leftSide a {

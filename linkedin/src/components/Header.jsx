@@ -4,7 +4,7 @@ const Header = () => {
       <div
         id="upperPart"
         style={{
-          backgroundImage: "url(./assets/images/back1.jpg)",
+          backgroundImage: "url(/assets/images/back1.jpg)",
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -41,7 +41,7 @@ const Header = () => {
             alt="company logo"
             height="32px"
           />
-          <p>sdfssgsdgfsdfsdf</p>
+          <p>Strive School</p>
         </div>
       </div>
     </div>

@@ -1,11 +1,17 @@
+import { Switch, Router, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header.jsx";
+import Profile from "./components/Profile.jsx";
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <>
+      <Profile />
+      {/* <Router>
+        <Switch>
+          <Route component={Profile} path="/profile/me" exact />
+        </Switch>
+      </Router> */}
+    </>
   );
 }
 
