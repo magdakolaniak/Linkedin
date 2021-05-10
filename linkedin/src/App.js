@@ -8,7 +8,8 @@ import Profile from "./components/Profile.jsx";
 function App() {
   return (
     <div>
-      <Profile />
+      <MyNavbar />
+      <Profile userId="5fc4b02bb708c200175de890" />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-const Header = () => {
+const Header = (props) => {
   return (
     <div id="headerComp">
       <div
@@ -12,8 +12,8 @@ const Header = () => {
       >
         <img
           id="profilePic"
-          src="/assets/images/profilepic.jpg"
-          alt="rofile of me"
+          src={props.profileData.image}
+          alt={"rofile of " + props.profileData.name}
         />
         <div id="message">
           <button id="button">Message</button> <span>...</span>
@@ -21,14 +21,19 @@ const Header = () => {
       </div>
       <div id="lowerPart">
         <div id="leftSide">
-          <p id="name">Luis Antonio Canettoli Ordoñez</p> <span>. 3rd</span>
-          <p id="jobTitle">
-            MERN Full Stack Developer | Teaching Assistant @ Strive School
+          <p id="name">
+            <span style={{ marginRight: "10px" }}>
+              {props.profileData.name}
+            </span>
+            <span>{props.profileData.surname}</span>
           </p>
+          <span>. 3rd</span>
+          <br></br>
+          <p id="jobTitle">{props.profileData.bio}</p>
           <ul>
-            <li>address</li>
+            <li>{props.profileData.area}</li>
             <li>.</li>
-            <li>number of connections</li>
+            <li>150 connections</li>
             <li>.</li>
             <li>
               <a href="https://google.com">Contact info</a>
