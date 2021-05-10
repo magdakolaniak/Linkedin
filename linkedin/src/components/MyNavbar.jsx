@@ -1,7 +1,6 @@
 import { Navbar, Row, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../App.css";
-import { FaBeer } from "react-icons/fa";
 import { ImHome3 } from "react-icons/im";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { MdWork } from "react-icons/md";
