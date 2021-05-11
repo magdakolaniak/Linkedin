@@ -42,8 +42,12 @@ class Profile extends Component {
             {this.state.loadingFinished && (
               <Header profileData={this.state.profileData} />
             )}
-            <Experiences title="Experience" />
-            <Experiences title="Eduction" />
+            {this.state.loadingFinished && (
+              <Experiences
+                title="Experience"
+                userId={this.state.profileData._id}
+              />
+            )}
             <Interests title="Interests" />
           </Col>
           <Col md={4}>
