@@ -1,14 +1,18 @@
-import { Navbar, Row, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
-import { ImHome3 } from "react-icons/im";
-import { BsFillPeopleFill } from "react-icons/bs";
-import { MdWork } from "react-icons/md";
-import { BiMessageRoundedDots } from "react-icons/bi";
-import { MdNotifications } from "react-icons/md";
-import { ImProfile } from "react-icons/im";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { GiAbstract050 } from "react-icons/gi";
+
+import { Navbar, Row, Nav, Form, FormControl, Dropdown } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
+import { ImHome3 } from 'react-icons/im';
+import { BsFillPeopleFill } from 'react-icons/bs';
+import { MdWork } from 'react-icons/md';
+import { BiMessageRoundedDots } from 'react-icons/bi';
+import { MdNotifications } from 'react-icons/md';
+import { ImProfile } from 'react-icons/im';
+import { IoMdArrowDropdown } from 'react-icons/io';
+import { GiAbstract050 } from 'react-icons/gi';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { withRouter, Link } from 'react-router-dom';
+
 
 const MyNavbar = () => (
   <div>
@@ -32,13 +36,19 @@ const MyNavbar = () => (
           </g>
         </svg>
       </Navbar.Brand>
+      <div className="magnify-glass-navbar">
+        {' '}
+        <AiOutlineSearch />{' '}
+      </div>
       <Form inline>
-        <FormControl
-          className="navbar-searching-style"
-          type="text"
-          placeholder="Search"
-          className="mr-sm-2"
-        />
+      <div>
+          <FormControl
+            type="text"
+            placeholder="Search"
+            className="mr-sm-2 navbar-searching-style"
+          />
+        </div>
+
       </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mx-auto">
@@ -46,16 +56,22 @@ const MyNavbar = () => (
             <Row className="mx-2 ">
               <ImHome3 className="icons-navbar" />
             </Row>
-            <Row className="mx-2 navbar-rows-text">
-              <p>Main</p>
+            <Row className="mx-2">
+              <Nav.Link href="/me" className="navbar-rows-text">
+                {' '}
+                Main
+              </Nav.Link>
             </Row>
           </div>
           <div className="mt-3">
             <Row className="mx-2">
               <BsFillPeopleFill className="icons-navbar" />
             </Row>
-            <Row className="mx-3 navbar-rows-text">
-              <p>Network</p>
+            <Row className="mx-2">
+              <Nav.Link href="/lateralprofiles" className="navbar-rows-text">
+                {' '}
+                Network
+              </Nav.Link>
             </Row>
           </div>
           <div className="mt-3">
@@ -95,8 +111,9 @@ const MyNavbar = () => (
                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
               </Dropdown.Menu>
               <Row className="mx-2 navbar-rows-text">
-                <p>
+
                   Me <IoMdArrowDropdown />{" "}
+
                 </p>
               </Row>
             </Dropdown>
@@ -114,4 +131,4 @@ const MyNavbar = () => (
     </Navbar>
   </div>
 );
-export default MyNavbar;
+export default withRouter(MyNavbar);

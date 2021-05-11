@@ -1,14 +1,26 @@
-import "./App.css";
-import MyNavbar from "./components/MyNavbar";
-import Profile from "./components/Profile.jsx";
+
+
+
 import MyFooter from "./components/MyFooter";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.css';
+import MyNavbar from './components/MyNavbar';
+import './index.css';
+import Profile from './components/Profile.jsx';
+import LateralProfiles from './components/LateralProfiles';
+
 
 function App() {
   return (
     <div>
-      <MyNavbar />
-      <Profile userId="6099186a619e5d00151f8f86" />
-      <MyFooter />
+
+      <Router>
+        <MyNavbar />
+        <Route component={Profile} path="/me" exact />
+        <Route component={Profile} path="/userprofile/:userId" exact />
+        <Route component={LateralProfiles} path="/lateralprofiles" exact />
+      </Router>
+
     </div>
   );
 }

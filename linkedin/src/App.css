@@ -95,6 +95,7 @@
   color: #0a66c2;
 }
 
+
 #experiencesContainer {
   background-color: white;
   border-radius: 10px 10px 10px 10px;
@@ -135,6 +136,8 @@ p#expTitle {
   color: rgb(156, 156, 156);
 }
 
+
+
 .bg-navbar {
   background-color: white;
   margin-right: auto;
@@ -159,14 +162,35 @@ p#expTitle {
 .navbar-rows-text {
   color: rgb(114, 114, 114);
   font-size: small;
+  padding-top: 2px;
 }
 .navbar-toggle-style {
   background-color: white !important;
   border: none !important;
   padding: 0.175rem 0.25rem !important;
 }
-.navbar-last-one {
-  border-left-style: solid, border-left-s;
+.navbar-searching-style {
+  border-left-style: none;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 0px;
+}
+.magnify-glass-navbar {
+  border: 1px solid #ced4da;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  font-size: 22px;
+  border-right-style: none;
+  padding-bottom: 3px;
+  padding-left: 8px;
+}
+.navbar-searching-style:focus {
+  color: black;
+  border: 1px solid #ced4da;
+  border-left-style: none;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .footer-links {
@@ -177,10 +201,13 @@ p#expTitle {
   line-height: 1.33333;
 }
 .footer-main-row {
+
   /* position: fixed;
   bottom: 0; */
   left: 150px;
   right: 100px;
+
+
   margin-bottom: 15px;
 }
 
@@ -221,5 +248,7 @@ p#expTitle {
 
 #mainContent {
   padding-top: 110px;
+
   margin-bottom: 70px;
+
 }

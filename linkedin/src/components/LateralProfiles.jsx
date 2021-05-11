@@ -1,7 +1,8 @@
-import { Button } from "react-bootstrap";
-import "../index.css";
-import ProfileImg from "./ProfileImg.jpeg";
-import React from "react";
+import { Button, Nav } from 'react-bootstrap';
+import '../index.css';
+import ProfileImg from './ProfileImg.jpeg';
+import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class LateralProfiles extends React.Component {
   state = {
@@ -12,11 +13,11 @@ class LateralProfiles extends React.Component {
   componentDidMount = async () => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/profile/",
+        'https://striveschool-api.herokuapp.com/api/profile/',
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MjRhNDYxOWU1ZDAwMTUxZjhmODciLCJpYXQiOjE2MjA2NDkxMjQsImV4cCI6MTYyMTg1ODcyNH0.15CJxLNt1zq17Dn6MlvL8BGiDpMkFLJe7HLxE-St3AM",
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MjRhNDYxOWU1ZDAwMTUxZjhmODciLCJpYXQiOjE2MjA2NDkxMjQsImV4cCI6MTYyMTg1ODcyNH0.15CJxLNt1zq17Dn6MlvL8BGiDpMkFLJe7HLxE-St3AM',
           },
         }
       );
@@ -29,7 +30,7 @@ class LateralProfiles extends React.Component {
           isLoading: false,
         });
       } else {
-        console.log("houston we got an error");
+        console.log('houston we got an error');
         this.setState({ isError: true, isLoading: false });
       }
     } catch (error) {
@@ -49,15 +50,23 @@ class LateralProfiles extends React.Component {
             <div key={item._id} id="lateral-profile" className="d-flex mt-3">
               <div
                 className="d-flex align-items-center justify-content-center"
-                style={{ display: "inline" }}
+                style={{ display: 'inline' }}
               >
                 <img src={item.image} alt="" id="lateral-profile-user-image" />
               </div>
 
-              <div style={{ display: "inline" }} id="lateral-profile-info-box">
+              <div style={{ display: 'inline' }} id="lateral-profile-info-box">
                 <h3 id="lateral-profile-username">
-                  <span>{item.name}</span>
-                  <span> {item.surname}</span>
+                  <Nav.Link
+                    id="lateral-profile-username-link"
+                    onClick={() =>
+                      this.props.history.push('/userprofile/' + item._id)
+                    }
+                  >
+                    {item.name} {item.surname}
+                  </Nav.Link>
+                  {item.name}
+
                   <span id="lateral-profile-name-grade-separator"> - </span>
                   <span>1°</span>
                 </h3>
@@ -73,4 +82,4 @@ class LateralProfiles extends React.Component {
   }
 }
 
-export default LateralProfiles;
+export default withRouter(LateralProfiles);
