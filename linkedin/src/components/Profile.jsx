@@ -12,18 +12,11 @@ class Profile extends Component {
     idFromUrl: "",
   };
 
-  // async componentDidMount() {
-  //   this.fetchProfiles();
-  // this.setState({
-  //   idFromUrl: this.props.match.params.userId,
-  // });
-  // }
-
   async fetchProfiles() {
-    // console.log(this.state.idFromUrl);
+    console.log("id: ", this.state.idFromUrl);
     try {
       let response = await fetch(
-        `https://striveschool-api.herokuapp.com/api/profile/${this.state.idFromUrl}`,
+        `https://striveschool-api.herokuapp.com/api/profile/${this.props.match.params.userId}`,
         {
           headers: {
             Authorization:
@@ -34,6 +27,7 @@ class Profile extends Component {
 
       if (response.ok) {
         let data = await response.json();
+        console.log("data  ", data);
         this.setState({
           profileData: data,
           loadingFinished: true,
@@ -47,15 +41,24 @@ class Profile extends Component {
     }
   }
 
-  componentDidUpdate = (prevProps, prevState) => {
-    console.log("from url ", this.props.match.params.userId);
-    if (prevProps !== this.props) {
+  componentDidMount() {
+    this.setState({
+      idFromUrl: this.props.match.params.userId,
+    });
+    this.fetchProfiles();
+  }
+
+  componentDidUpdate = () => {
+    let newId = this.props.match.params.userId;
+
+    if (newId !== this.state.idFromUrl) {
+      // if (prevProps.match.params.userId !== this.props.match.params.userId) {
       this.setState({
         idFromUrl: this.props.match.params.userId,
       });
-      console.log("from state ", this.state.idFromUrl);
       this.fetchProfiles();
     }
+    // }
   };
 
   render() {
@@ -63,12 +66,15 @@ class Profile extends Component {
       <Container id="mainContent">
         <Row>
           <Col md={8}>
-            {/* {this.state.loadingFinished && (
+            {this.state.loadingFinished && (
               <Header profileData={this.state.profileData} />
             )}
             {this.state.loadingFinished && (
-              <Experiences title="Experience" userId={this.props.userId} />
-            )} */}
+              <Experiences
+                title="Experience"
+                userId={this.state.profileData._id}
+              />
+            )}
             <Interests title="Interests" />
           </Col>
           <Col md={4}>
