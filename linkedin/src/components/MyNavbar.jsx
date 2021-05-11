@@ -1,3 +1,4 @@
+
 import { Navbar, Row, Nav, Form, FormControl, Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
@@ -11,6 +12,7 @@ import { IoMdArrowDropdown } from 'react-icons/io';
 import { GiAbstract050 } from 'react-icons/gi';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { withRouter, Link } from 'react-router-dom';
+
 
 const MyNavbar = () => (
   <div>
@@ -39,13 +41,14 @@ const MyNavbar = () => (
         <AiOutlineSearch />{' '}
       </div>
       <Form inline>
-        <div>
+      <div>
           <FormControl
             type="text"
             placeholder="Search"
             className="mr-sm-2 navbar-searching-style"
           />
         </div>
+
       </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mx-auto">
@@ -108,8 +111,9 @@ const MyNavbar = () => (
                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
               </Dropdown.Menu>
               <Row className="mx-2 navbar-rows-text">
-                <p>
-                  Me <IoMdArrowDropdown />{' '}
+
+                  Me <IoMdArrowDropdown />{" "}
+
                 </p>
               </Row>
             </Dropdown>

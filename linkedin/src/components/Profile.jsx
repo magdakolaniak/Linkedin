@@ -1,7 +1,12 @@
-import { Component } from 'react';
-import Header from './Header';
-import { Container, Row, Col } from 'react-bootstrap';
-import LateralProfiles from './LateralProfiles';
+
+import { Component } from "react";
+import Header from "./Header";
+import Experiences from "./Experiences";
+import Interests from "./Interests";
+import { Container, Row, Col, ThemeProvider } from "react-bootstrap";
+import LateralProfiles from "./LateralProfiles";
+
+
 
 class Profile extends Component {
   state = {
@@ -58,6 +63,10 @@ class Profile extends Component {
             {this.state.loadingFinished && (
               <Header profileData={this.state.profileData} />
             )}
+            {this.state.loadingFinished && (
+              <Experiences title="Experience" userId={this.props.userId} />
+            )}
+            <Interests title="Interests" />
           </Col>
           <Col md={4}>
             <LateralProfiles />
