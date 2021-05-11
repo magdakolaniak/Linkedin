@@ -1,18 +1,16 @@
-
-import { Navbar, Row, Nav, Form, FormControl, Dropdown } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../App.css';
-import { ImHome3 } from 'react-icons/im';
-import { BsFillPeopleFill } from 'react-icons/bs';
-import { MdWork } from 'react-icons/md';
-import { BiMessageRoundedDots } from 'react-icons/bi';
-import { MdNotifications } from 'react-icons/md';
-import { ImProfile } from 'react-icons/im';
-import { IoMdArrowDropdown } from 'react-icons/io';
-import { GiAbstract050 } from 'react-icons/gi';
-import { AiOutlineSearch } from 'react-icons/ai';
-import { withRouter, Link } from 'react-router-dom';
-
+import { Navbar, Row, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../App.css";
+import { ImHome3 } from "react-icons/im";
+import { BsFillPeopleFill } from "react-icons/bs";
+import { MdWork } from "react-icons/md";
+import { BiMessageRoundedDots } from "react-icons/bi";
+import { MdNotifications } from "react-icons/md";
+import { ImProfile } from "react-icons/im";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { GiAbstract050 } from "react-icons/gi";
+import { AiOutlineSearch } from "react-icons/ai";
+import { withRouter, Link } from "react-router-dom";
 
 const MyNavbar = () => (
   <div>
@@ -37,18 +35,17 @@ const MyNavbar = () => (
         </svg>
       </Navbar.Brand>
       <div className="magnify-glass-navbar">
-        {' '}
-        <AiOutlineSearch />{' '}
+        {" "}
+        <AiOutlineSearch />{" "}
       </div>
       <Form inline>
-      <div>
+        <div>
           <FormControl
             type="text"
             placeholder="Search"
             className="mr-sm-2 navbar-searching-style"
           />
         </div>
-
       </Form>
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mx-auto">
@@ -58,7 +55,7 @@ const MyNavbar = () => (
             </Row>
             <Row className="mx-2">
               <Nav.Link href="/me" className="navbar-rows-text">
-                {' '}
+                {" "}
                 Main
               </Nav.Link>
             </Row>
@@ -69,7 +66,7 @@ const MyNavbar = () => (
             </Row>
             <Row className="mx-2">
               <Nav.Link href="/lateralprofiles" className="navbar-rows-text">
-                {' '}
+                {" "}
                 Network
               </Nav.Link>
             </Row>
@@ -111,9 +108,8 @@ const MyNavbar = () => (
                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
               </Dropdown.Menu>
               <Row className="mx-2 navbar-rows-text">
-
-                  Me <IoMdArrowDropdown />{" "}
-
+                <p>
+                  Me <IoMdArrowDropdown />
                 </p>
               </Row>
             </Dropdown>
