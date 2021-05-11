@@ -43,10 +43,7 @@ class Profile extends Component {
               <Header profileData={this.state.profileData} />
             )}
             {this.state.loadingFinished && (
-              <Experiences
-                title="Experience"
-                userId={this.state.profileData._id}
-              />
+              <Experiences title="Experience" userId={this.props.userId} />
             )}
             <Interests title="Interests" />
           </Col>

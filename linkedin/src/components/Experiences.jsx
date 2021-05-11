@@ -3,7 +3,7 @@ import { Component } from "react";
 
 class Experiences extends Component {
   state = {
-    slicedData: [],
+    expData: [],
     loadingFinished: false,
     noExperience: false,
   };
@@ -22,14 +22,9 @@ class Experiences extends Component {
 
       if (response.ok) {
         let data = await response.json();
+        console.log("data: ", data);
 
-        if (data.lengh > 0) {
-          let sliced = data.slice(0, 6);
-          this.setState({ slicedData: sliced, loadingFinished: true });
-          console.log(sliced);
-        } else {
-          this.setState({ noExperience: true });
-        }
+        this.setState({ expData: data, loadingFinished: true });
       } else {
         throw new Error("something went wrong with fetching experiences");
       }
@@ -41,21 +36,23 @@ class Experiences extends Component {
     return (
       <Container id="experiencesContainer">
         <p id="expTitle">{this.props.title}</p>
-        {this.state.loadingFinished &&
-          this.state.slicedData.lengh >
-            0(
-              <Row>
-                <Col sm={1}>
-                  <img src="https://picsum.photos/id/450/64/64"></img>
-                </Col>
-                <Col id="descriptions">
-                  <p id="position">Teaching Assistant</p>
-                  <p id="school">Strive School</p>
-                  <p id="duration">October 2020 - Present . 8 mos</p>
-                  <hr></hr>
-                </Col>
-              </Row>
-            )}
+        {this.state.expData.map((elem) => {
+          return (
+            <Row>
+              <Col sm={1}>
+                <img src={elem.image}></img>
+              </Col>
+              <Col id="descriptions">
+                <p id="position">{elem.role}</p>
+                <p id="school">{elem.company}</p>
+                <p id="duration">
+                  {elem.startDate} - {elem.endDate ? elem.endDate : "present"}
+                </p>
+                <hr></hr>
+              </Col>
+            </Row>
+          );
+        })}
       </Container>
     );
   }
