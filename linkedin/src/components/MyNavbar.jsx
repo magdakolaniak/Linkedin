@@ -10,6 +10,7 @@ import { ImProfile } from 'react-icons/im';
 import { IoMdArrowDropdown } from 'react-icons/io';
 import { GiAbstract050 } from 'react-icons/gi';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { withRouter, Link } from 'react-router-dom';
 
 const MyNavbar = () => (
   <div>
@@ -52,16 +53,22 @@ const MyNavbar = () => (
             <Row className="mx-2 ">
               <ImHome3 className="icons-navbar" />
             </Row>
-            <Row className="mx-2 navbar-rows-text">
-              <p>Main</p>
+            <Row className="mx-2">
+              <Nav.Link href="/me" className="navbar-rows-text">
+                {' '}
+                Main
+              </Nav.Link>
             </Row>
           </div>
           <div className="mt-3">
             <Row className="mx-2">
               <BsFillPeopleFill className="icons-navbar" />
             </Row>
-            <Row className="mx-3 navbar-rows-text">
-              <p>Network</p>
+            <Row className="mx-2">
+              <Nav.Link href="/lateralprofiles" className="navbar-rows-text">
+                {' '}
+                Network
+              </Nav.Link>
             </Row>
           </div>
           <div className="mt-3">
@@ -120,4 +127,4 @@ const MyNavbar = () => (
     </Navbar>
   </div>
 );
-export default MyNavbar;
+export default withRouter(MyNavbar);

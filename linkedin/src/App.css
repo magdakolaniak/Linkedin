@@ -116,6 +116,7 @@
 .navbar-rows-text {
   color: rgb(114, 114, 114);
   font-size: small;
+  padding-top: 2px;
 }
 .navbar-toggle-style {
   background-color: white !important;
@@ -155,10 +156,6 @@
   line-height: 1.33333;
 }
 .footer-main-row {
-  position: fixed;
-  bottom: 0;
-  left: 150px;
-  right: 100px;
   margin-bottom: 15px;
 }
 .icon-footer-logo {
