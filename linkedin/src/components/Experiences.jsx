@@ -5,7 +5,6 @@ class Experiences extends Component {
   state = {
     expData: [],
     loadingFinished: false,
-    noExperience: false,
   };
 
   async componentDidMount() {
@@ -38,9 +37,9 @@ class Experiences extends Component {
         <p id="expTitle">{this.props.title}</p>
         {this.state.expData.map((elem) => {
           return (
-            <Row>
+            <Row key={elem._id}>
               <Col sm={1}>
-                <img src={elem.image}></img>
+                <img src="https://picsum.photos/seed/picsum/65/65"></img>
               </Col>
               <Col id="descriptions">
                 <p id="position">{elem.role}</p>
