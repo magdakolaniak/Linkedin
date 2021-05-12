@@ -1,12 +1,9 @@
-
-import { Component } from "react";
-import Header from "./Header";
-import Experiences from "./Experiences";
-import Interests from "./Interests";
-import { Container, Row, Col, ThemeProvider } from "react-bootstrap";
-import LateralProfiles from "./LateralProfiles";
-
-
+import { Component } from 'react';
+import Header from './Header';
+import Experiences from './Experiences';
+import Interests from './Interests';
+import { Container, Row, Col, ThemeProvider } from 'react-bootstrap';
+import LateralProfiles from './LateralProfiles';
 
 class Profile extends Component {
   state = {
@@ -16,16 +13,15 @@ class Profile extends Component {
   };
   async componentDidMount() {
     this.fetchProfiles();
-    this.setState({
-      idfromUrl: this.props.match.params.userId,
-    });
+    // this.setState({
+    //   idfromUrl: this.props.match.params.userId,
+    // });
   }
 
   async fetchProfiles() {
     try {
       let response = await fetch(
-        'https://striveschool-api.herokuapp.com/api/profile/' +
-          this.state.idFromUrl,
+        'https://striveschool-api.herokuapp.com/api/profile/me',
         {
           headers: {
             Authorization:
@@ -49,11 +45,11 @@ class Profile extends Component {
     }
   }
 
-  componentDidUpdate = (prevProps, prevState) => {
-    if (prevState.idFromUrl !== this.state.idFromUrl) {
-      this.fetchProfiles();
-    }
-  };
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   if (prevState.idFromUrl !== this.state.idFromUrl) {
+  //     this.fetchProfiles();
+  //   }
+  // };
 
   render() {
     return (
