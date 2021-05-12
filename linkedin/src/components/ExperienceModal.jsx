@@ -1,7 +1,43 @@
-import React from 'react';
-import { Modal, Button, Form, Col } from 'react-bootstrap';
+import React from "react";
+import { Modal, Button, Form, Col } from "react-bootstrap";
 
 class ExperienceModal extends React.Component {
+  state = {
+    newExperience: {
+      role: "",
+      company: "",
+      startDate: "",
+      endDate: "",
+      description: "",
+      area: "",
+    },
+  };
+
+  handleChange = (e) => {
+    this.setState({
+      newExperience: {
+        ...this.state.newExperience,
+        [e.target.id]: e.target.value,
+      },
+    });
+  };
+
+  submitExperience = async (e) => {
+    e.preventDefault();
+    this.props.closeModal();
+    this.props.addNewExp(this.state.newExperience);
+
+    try {
+      let response = await fetch();
+
+      if (!response.ok) {
+        throw new Error("your new experience didn't uploaded!");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
   render() {
     return (
       <Modal show={this.props.isModal}>
@@ -11,7 +47,7 @@ class ExperienceModal extends React.Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={(e) => this.submitExperience(e)}>
             <Form.Row>
               <Form.Group as={Col}>
                 <Form.Label className="modal-labels-text">Role:</Form.Label>
@@ -19,7 +55,8 @@ class ExperienceModal extends React.Component {
                   id="role"
                   type="text"
                   placeholder="Your role in company"
-                  value={this.props.expDetails.role}
+                  value={this.state.newExperience.role}
+                  onChange={(e) => this.handleChange(e)}
                 />
               </Form.Group>
 
@@ -29,7 +66,8 @@ class ExperienceModal extends React.Component {
                   id="company"
                   type="text"
                   placeholder="Company you worked in"
-                  value={this.props.expDetails.role}
+                  value={this.state.newExperience.company}
+                  onChange={(e) => this.handleChange(e)}
                 />
               </Form.Group>
             </Form.Row>
@@ -39,7 +77,8 @@ class ExperienceModal extends React.Component {
               <Form.Control
                 id="startDate"
                 type="datetime-local"
-                value={this.props.expDetails.startDate}
+                value={this.state.newExperience.startDate}
+                onChange={(e) => this.handleChange(e)}
               />
             </Form.Group>
             <Form.Group>
@@ -47,14 +86,21 @@ class ExperienceModal extends React.Component {
               <Form.Control
                 id="endDate"
                 type="datetime-local"
-                value={this.props.expDetails.endDate}
+                value={this.state.newExperience.endDate}
+                onChange={(e) => this.handleChange(e)}
               />
             </Form.Group>
             <Form.Group>
               <Form.Label className="modal-labels-text">
                 Description:
               </Form.Label>
-              <Form.Control as="textarea" id="description" rows={3} />
+              <Form.Control
+                as="textarea"
+                id="description"
+                rows={3}
+                value={this.state.newExperience.description}
+                onChange={(e) => this.handleChange(e)}
+              />
             </Form.Group>
             <Form.Group as={Col}>
               <Form.Label className="modal-labels-text">
@@ -64,6 +110,8 @@ class ExperienceModal extends React.Component {
                 id="area"
                 type="text"
                 placeholder="Place of working"
+                value={this.state.newExperience.area}
+                onChange={(e) => this.handleChange(e)}
               />
             </Form.Group>
 
@@ -71,14 +119,14 @@ class ExperienceModal extends React.Component {
               Submit
             </Button>
           </Form>
+          <Button
+            id="skipChanges"
+            variant="danger"
+            onClick={() => this.props.closeModal()}
+          >
+            Skip changes
+          </Button>
         </Modal.Body>
-        <Modal.Footer>
-          <Modal.Footer>
-            <Button variant="danger" onClick={() => this.props.closeModal()}>
-              Skip changes
-            </Button>
-          </Modal.Footer>
-        </Modal.Footer>
       </Modal>
     );
   }
