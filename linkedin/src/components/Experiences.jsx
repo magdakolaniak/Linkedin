@@ -10,6 +10,7 @@ class Experiences extends React.Component {
     expData: [],
     loadingFinished: false,
     isModal: false,
+    selectedExp: "none",
   };
 
   async componentDidMount() {
@@ -66,9 +67,12 @@ class Experiences extends React.Component {
   }
 
   addNewExp = (newExp) => {
-    this.setState({ expData: [newExp, ...this.state.expData] });
+    this.setState({ expData: [...this.state.expData, newExp] });
   };
 
+  testFunction = (e) => {
+    console.log(e.target);
+  };
   render() {
     return (
       <Container id="experiencesContainer">
@@ -80,8 +84,11 @@ class Experiences extends React.Component {
             <span id="addBack">
               {this.props.isMe === "me" && (
                 <CgMathPlus
+                  id="none"
                   className="expIcons"
-                  onClick={() => this.setState({ isModal: true })}
+                  onClick={(e) =>
+                    this.setState({ isModal: true, selectedExp: e.target.id })
+                  }
                 />
               )}
             </span>
@@ -100,8 +107,17 @@ class Experiences extends React.Component {
                   <p id="position">{elem.role}</p>
                   {this.props.isMe === "me" && (
                     <div>
-                      <span className="editBack" id={elem._id}>
-                        <FiEdit2 className="editIcon" />
+                      <span className="editBack">
+                        <FiEdit2
+                          id={elem._id}
+                          onClick={(e) =>
+                            this.setState({
+                              isModal: true,
+                              selectedExp: e.target.id,
+                            })
+                          }
+                          className="editIcon"
+                        />
                       </span>
                     </div>
                   )}
@@ -118,8 +134,10 @@ class Experiences extends React.Component {
         <ExperienceModal
           addNewExp={this.addNewExp}
           isModal={this.state.isModal}
-          expDetails={this.state.expData}
+          expData={this.state.expData}
           closeModal={() => this.setState({ isModal: false })}
+          isMe={this.props.isMe}
+          selectedExp={this.state.selectedExp}
         />
       </Container>
     );

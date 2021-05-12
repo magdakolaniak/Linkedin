@@ -28,7 +28,18 @@ class ExperienceModal extends React.Component {
     this.props.addNewExp(this.state.newExperience);
 
     try {
-      let response = await fetch();
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${this.props.isMe}/experiences`,
+        {
+          method: "post",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTg2YTYxOWU1ZDAwMTUxZjhmODYiLCJpYXQiOjE2MjA2NDU5OTQsImV4cCI6MTYyMTg1NTU5NH0.CDHfsm4R57ghD9yYwMqF32cuot43P72UHjId5uHn8l0",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state.newExperience),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("your new experience didn't uploaded!");
@@ -37,6 +48,31 @@ class ExperienceModal extends React.Component {
       alert(error.message);
     }
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    let expData = this.props.expData;
+    let selectedExp = this.props.selectedExp;
+    let extractedExp = expData.filter((elem) => elem._id === selectedExp);
+    // console.log(extractedExp);
+    let extractedObj = extractedExp[0];
+    console.log("extracted object: ", extractedObj);
+    // let newRole = extractedObj.role;
+    // console.log(newRole);
+
+    if (prevState.newExperience === this.state.newExperience && extractedObj) {
+      this.setState({
+        newExperience: {
+          ["role"]: extractedObj.role,
+          ["company"]: extractedObj.company,
+          ["startDate"]: extractedObj.startDate,
+          ["endDate"]: extractedObj.endDate,
+          ["description"]: extractedObj.description,
+          ["area"]: extractedObj.area,
+        },
+      });
+      console.log("state changed");
+    }
+  }
 
   render() {
     return (
