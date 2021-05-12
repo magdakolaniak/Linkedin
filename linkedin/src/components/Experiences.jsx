@@ -61,16 +61,10 @@ class Experiences extends Component {
     }
   }
 
-  switchModal = (e) => {
-    this.setState({ isModal: !this.isModal });
-  };
-
   render() {
     return (
       <Container id="experiencesContainer">
-        <p id="expTitle" onClick={this.switchModal}>
-          {this.props.title}
-        </p>
+        <p id="expTitle">{this.props.title}</p>
         {this.state.expData.map((elem) => {
           return (
             <Row key={elem._id}>
@@ -85,13 +79,6 @@ class Experiences extends Component {
                 </p>
                 <hr></hr>
               </Col>
-              <ArvandModal
-                isModal={this.state.isModal}
-                switchModal={() =>
-                  this.setState({ isModal: !this.state.isModal })
-                }
-                getText={this.getText}
-              />
             </Row>
           );
         })}
