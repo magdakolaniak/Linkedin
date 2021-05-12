@@ -1,8 +1,11 @@
-import { Row, Container, Col } from "react-bootstrap";
-import { Component } from "react";
-import ArvandModal from "./ArvandModal";
 
-class Experiences extends Component {
+import { Row, Container, Col, Button } from "react-bootstrap";
+import { Component } from "react";
+import React from 'react';
+import ExperienceModal from './ExperienceModal';
+
+
+class Experiences extends React.Component {
   state = {
     expData: [],
     loadingFinished: false,
@@ -16,23 +19,24 @@ class Experiences extends Component {
         {
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTg2YTYxOWU1ZDAwMTUxZjhmODYiLCJpYXQiOjE2MjA2NDU5OTQsImV4cCI6MTYyMTg1NTU5NH0.CDHfsm4R57ghD9yYwMqF32cuot43P72UHjId5uHn8l0",
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTg2YTYxOWU1ZDAwMTUxZjhmODYiLCJpYXQiOjE2MjA2NDU5OTQsImV4cCI6MTYyMTg1NTU5NH0.CDHfsm4R57ghD9yYwMqF32cuot43P72UHjId5uHn8l0',
           },
         }
       );
 
       if (response.ok) {
         let data = await response.json();
-        console.log("data: ", data);
+        console.log('data: ', data);
 
         this.setState({ expData: data, loadingFinished: true });
       } else {
-        throw new Error("something went wrong with fetching experiences");
+        throw new Error('something went wrong with fetching experiences');
       }
     } catch (error) {
       alert(error.message);
     }
   }
+
 
   async componentDidUpdate(prevProps, prevState) {
     if (prevProps.userId !== this.props.userId) {
@@ -61,6 +65,7 @@ class Experiences extends Component {
     }
   }
 
+
   render() {
     return (
       <Container id="experiencesContainer">
@@ -69,19 +74,28 @@ class Experiences extends Component {
           return (
             <Row key={elem._id}>
               <Col sm={1}>
-                <img src="https://picsum.photos/seed/picsum/65/65"></img>
+                <img src="https://picsum.photos/seed/picsum/65/65" alt=""></img>
               </Col>
               <Col id="descriptions">
                 <p id="position">{elem.role}</p>
                 <p id="school">{elem.company}</p>
                 <p id="duration">
-                  {elem.startDate} - {elem.endDate ? elem.endDate : "present"}
+                  {elem.startDate} - {elem.endDate ? elem.endDate : 'present'}
                 </p>
                 <hr></hr>
               </Col>
             </Row>
           );
         })}
+        <ExperienceModal
+          isModal={this.state.isModal}
+          expDetails={this.state.expData}
+          closeModal={() => this.setState({ isModal: false })}
+        />
+        <Button onClick={() => this.setState({ isModal: true })}>
+          {' '}
+          Add new experience
+        </Button>
       </Container>
     );
   }

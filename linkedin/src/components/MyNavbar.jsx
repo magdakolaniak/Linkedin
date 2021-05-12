@@ -1,16 +1,18 @@
-import { Navbar, Row, Nav, Form, FormControl, Dropdown } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../App.css";
-import { ImHome3 } from "react-icons/im";
-import { BsFillPeopleFill } from "react-icons/bs";
-import { MdWork } from "react-icons/md";
-import { BiMessageRoundedDots } from "react-icons/bi";
-import { MdNotifications } from "react-icons/md";
-import { ImProfile } from "react-icons/im";
-import { IoMdArrowDropdown } from "react-icons/io";
-import { GiAbstract050 } from "react-icons/gi";
-import { AiOutlineSearch } from "react-icons/ai";
-import { withRouter, Link } from "react-router-dom";
+
+import { Navbar, Row, Nav, Form, FormControl, Dropdown } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css';
+import { ImHome3 } from 'react-icons/im';
+import { BsFillPeopleFill } from 'react-icons/bs';
+import { MdWork } from 'react-icons/md';
+import { BiMessageRoundedDots } from 'react-icons/bi';
+import { MdNotifications } from 'react-icons/md';
+import { ImProfile } from 'react-icons/im';
+import { IoMdArrowDropdown } from 'react-icons/io';
+import { GiAbstract050 } from 'react-icons/gi';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { withRouter, Link } from 'react-router-dom';
+
 
 const MyNavbar = () => (
   <div>
@@ -95,25 +97,21 @@ const MyNavbar = () => (
               <p>Notifications</p>
             </Row>
           </div>
-          <div className="mt-2">
-            <Dropdown>
-              <Row className="mx-2">
-                <Dropdown.Toggle className="navbar-toggle-style">
-                  <ImProfile className="icons-navbar" />
-                </Dropdown.Toggle>
-              </Row>
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-              </Dropdown.Menu>
-              <Row className="mx-2 navbar-rows-text">
+          <div className="mt-3">
+            <Row className="mx-2">
+              <ImProfile className="icons-navbar" />
+            </Row>
+
+            <Row className="mx-2 navbar-rows-text">
+              <Nav.Link href="/me" className="navbar-rows-text">
                 <p>
-                  Me <IoMdArrowDropdown />
-                </p>
-              </Row>
-            </Dropdown>
+                  {' '}
+                  Me <IoMdArrowDropdown className="icons-navbar" />{' '}
+                </p>{' '}
+              </Nav.Link>
+            </Row>
           </div>
+
           <div className="mt-3 navbar-last-one">
             <Row className="mx-2">
               <GiAbstract050 className="icons-navbar" />
