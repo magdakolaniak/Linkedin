@@ -27,6 +27,15 @@ class ExperienceModal extends React.Component {
     e.preventDefault();
     this.props.closeModal();
     this.props.addNewExp(this.state.newExperience);
+    // let method = "";
+    // if (this.props.addingMode) {
+    //   method = "post";
+    // } else if (this.props.editingMode) {
+    //   method = "put";
+    // } else {
+    //   method = "";
+    // }
+    // console.log("method is", method);
 
     try {
       let response = await fetch(
@@ -44,6 +53,32 @@ class ExperienceModal extends React.Component {
 
       if (!response.ok) {
         throw new Error("your new experience didn't uploaded!");
+      } else {
+        this.closeModal();
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  };
+
+  updateExperience = async () => {
+    this.props.updateExp(this.state.newExperience);
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${this.props.isMe}/experiences/${this.props.selectedExp}`,
+        {
+          method: "put",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTg2YTYxOWU1ZDAwMTUxZjhmODYiLCJpYXQiOjE2MjA2NDU5OTQsImV4cCI6MTYyMTg1NTU5NH0.CDHfsm4R57ghD9yYwMqF32cuot43P72UHjId5uHn8l0",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(this.state.newExperience),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("your experience didn't updated!");
       } else {
         this.closeModal();
       }
@@ -107,18 +142,37 @@ class ExperienceModal extends React.Component {
     // let newRole = extractedObj.role;
     // console.log(newRole);
 
-    if (prevState.newExperience === this.state.newExperience && extractedObj) {
+    if (
+      prevState.newExperience === this.state.newExperience &&
+      extractedObj &&
+      extractedObj.endDate
+    ) {
       this.setState({
         newExperience: {
           ["role"]: extractedObj.role,
           ["company"]: extractedObj.company,
-          ["startDate"]: extractedObj.startDate,
-          ["endDate"]: extractedObj.endDate,
+          ["startDate"]: extractedObj.startDate.slice(0, 19),
+          ["endDate"]: extractedObj.endDate.slice(0, 19) || null,
           ["description"]: extractedObj.description,
           ["area"]: extractedObj.area,
         },
       });
       console.log("state changed");
+    } else if (
+      prevState.newExperience === this.state.newExperience &&
+      extractedObj &&
+      !extractedObj.endDate
+    ) {
+      this.setState({
+        newExperience: {
+          ["role"]: extractedObj.role,
+          ["company"]: extractedObj.company,
+          ["startDate"]: extractedObj.startDate.slice(0, 19),
+          ["endDate"]: "",
+          ["description"]: extractedObj.description,
+          ["area"]: extractedObj.area,
+        },
+      });
     }
   }
 
@@ -208,10 +262,21 @@ class ExperienceModal extends React.Component {
                   />
                 </Form.Group>
 
-                <Button className="mt-4" variant="success" type="submit">
-                  {this.props.addingMode && "Submit your experience"}
-                  {this.props.editingMode && "Submit Changes"}
-                </Button>
+                {this.props.addingMode && (
+                  <Button className="mt-4" variant="primary" type="submit">
+                    Submit your experience
+                    {this.props.editingMode && "Submit Changes"}
+                  </Button>
+                )}
+                {this.props.editingMode && (
+                  <Button
+                    className="mt-4"
+                    variant="success"
+                    onClick={() => this.updateExperience()}
+                  >
+                    Submit Changes
+                  </Button>
+                )}
               </Form>
               <Button
                 id="skipChanges"

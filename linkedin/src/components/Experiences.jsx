@@ -93,6 +93,21 @@ class Experiences extends React.Component {
     this.setState({ expData: [...filteredExp] });
   };
 
+  updateExp = (exp) => {
+    let updatedExp = this.state.expData.map((elem) => {
+      if (elem._id === this.state.selectedExp) {
+        elem.role = exp.role;
+        elem.company = exp.company;
+        elem.startDate = exp.startDate;
+        elem.endDate = exp.endDate;
+        elem.description = exp.description;
+        elem.area = exp.area;
+      }
+    });
+    // this.setState({ expData: [...updatedExp] });
+    console.log("updatedExp ", updatedExp);
+  };
+
   render() {
     return (
       <Container id="experiencesContainer">
@@ -168,6 +183,7 @@ class Experiences extends React.Component {
           addingMode={this.state.addingMode}
           onModalClose={this.onModalClose}
           removeExp={this.removeExp}
+          updateExp={this.updateExp}
         />
       </Container>
     );
