@@ -173,7 +173,23 @@ p#expTitle {
 #skipChanges {
   position: absolute;
   right: 15px;
-  bottom: 15px;
+  bottom: 16px;
+}
+#deleteExp {
+  position: absolute;
+  left: 184px;
+  bottom: 16px;
+}
+
+#modalBack {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 60%;
+  z-index: 1000;
 }
 
 .bg-navbar {

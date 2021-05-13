@@ -11,6 +11,8 @@ class Experiences extends React.Component {
     loadingFinished: false,
     isModal: false,
     selectedExp: "none",
+    editingMode: false,
+    addingMode: false,
   };
 
   async componentDidMount() {
@@ -66,6 +68,13 @@ class Experiences extends React.Component {
     }
   }
 
+  onModalClose = () => {
+    this.setState({
+      editingMode: false,
+      addingMode: false,
+    });
+  };
+
   addNewExp = (newExp) => {
     this.setState({ expData: [...this.state.expData, newExp] });
   };
@@ -87,7 +96,11 @@ class Experiences extends React.Component {
                   id="none"
                   className="expIcons"
                   onClick={(e) =>
-                    this.setState({ isModal: true, selectedExp: e.target.id })
+                    this.setState({
+                      isModal: true,
+                      selectedExp: e.target.id,
+                      addingMode: true,
+                    })
                   }
                 />
               )}
@@ -114,6 +127,7 @@ class Experiences extends React.Component {
                             this.setState({
                               isModal: true,
                               selectedExp: e.target.id,
+                              editingMode: true,
                             })
                           }
                           className="editIcon"
@@ -138,6 +152,9 @@ class Experiences extends React.Component {
           closeModal={() => this.setState({ isModal: false })}
           isMe={this.props.isMe}
           selectedExp={this.state.selectedExp}
+          editingMode={this.state.editingMode}
+          addingMode={this.state.addingMode}
+          onModalClose={this.onModalClose}
         />
       </Container>
     );
