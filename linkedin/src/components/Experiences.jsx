@@ -4,6 +4,7 @@ import React from "react";
 import ExperienceModal from "./ExperienceModal";
 import { CgMathPlus } from "react-icons/cg";
 import { FiEdit2 } from "react-icons/fi";
+import { format, parseISO } from "date-fns";
 
 class Experiences extends React.Component {
   state = {
@@ -79,9 +80,19 @@ class Experiences extends React.Component {
     this.setState({ expData: [...this.state.expData, newExp] });
   };
 
-  testFunction = (e) => {
-    console.log(e.target);
+  dateHandler = (date) => {
+    let realDate = parseISO(date);
+    let formatedDate = format(realDate, "MMM, yyyy");
+    return formatedDate;
   };
+
+  removeExp = () => {
+    let filteredExp = this.state.expData.filter(
+      (elem) => elem._id !== this.state.selectedExp
+    );
+    this.setState({ expData: [...filteredExp] });
+  };
+
   render() {
     return (
       <Container id="experiencesContainer">
@@ -138,7 +149,8 @@ class Experiences extends React.Component {
                 </div>
                 <p id="school">{elem.company}</p>
                 <p id="duration">
-                  {elem.startDate} - {elem.endDate ? elem.endDate : "present"}
+                  {this.dateHandler(elem.startDate)} -{" "}
+                  {elem.endDate ? this.dateHandler(elem.endDate) : " present"}
                 </p>
                 <hr></hr>
               </Col>
@@ -155,6 +167,7 @@ class Experiences extends React.Component {
           editingMode={this.state.editingMode}
           addingMode={this.state.addingMode}
           onModalClose={this.onModalClose}
+          removeExp={this.removeExp}
         />
       </Container>
     );

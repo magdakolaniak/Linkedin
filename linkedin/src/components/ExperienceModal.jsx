@@ -11,7 +11,7 @@ class ExperienceModal extends React.Component {
       description: "",
       area: "",
     },
-    deleteConfirm: true,
+    deleteConfirm: false,
   };
 
   handleChange = (e) => {
@@ -44,6 +44,8 @@ class ExperienceModal extends React.Component {
 
       if (!response.ok) {
         throw new Error("your new experience didn't uploaded!");
+      } else {
+        this.closeModal();
       }
     } catch (error) {
       alert(error.message);
@@ -70,10 +72,29 @@ class ExperienceModal extends React.Component {
     this.resetState();
   };
 
-  deleteExperience = () => {
-    // this.setState({
-    //   deleteConfirm: false,
-    // });
+  deleteExperience = async () => {
+    try {
+      let response = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/6099186a619e5d00151f8f86/experiences/${this.props.selectedExp}`,
+        {
+          method: "delete",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTg2YTYxOWU1ZDAwMTUxZjhmODYiLCJpYXQiOjE2MjA2NDU5OTQsImV4cCI6MTYyMTg1NTU5NH0.CDHfsm4R57ghD9yYwMqF32cuot43P72UHjId5uHn8l0",
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      if (response.ok) {
+        this.props.removeExp();
+        this.closeModal();
+      } else {
+        throw new Error("couldn't delete");
+      }
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   componentDidUpdate(prevProps, prevState) {
@@ -188,7 +209,7 @@ class ExperienceModal extends React.Component {
                 </Form.Group>
 
                 <Button className="mt-4" variant="success" type="submit">
-                  {this.props.addingMode && "Submit"}
+                  {this.props.addingMode && "Submit your experience"}
                   {this.props.editingMode && "Submit Changes"}
                 </Button>
               </Form>
@@ -218,23 +239,19 @@ class ExperienceModal extends React.Component {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
+              Are you sure you want to delete this Experience?
+            </Modal.Body>
+            <Modal.Footer>
               <Button
-                id="skipChanges"
                 variant="outline-secondary"
-                onClick={() => this.closeModal()}
+                onClick={() => this.setState({ deleteConfirm: false })}
               >
                 Cancel
               </Button>
-              {this.props.editingMode && (
-                <Button
-                  id="deleteExp"
-                  variant="danger"
-                  onClick={() => this.setState({ deleteConfirm: true })}
-                >
-                  Delete Experiment
-                </Button>
-              )}
-            </Modal.Body>{" "}
+              <Button variant="danger" onClick={() => this.deleteExperience()}>
+                Yes, delete
+              </Button>
+            </Modal.Footer>
           </>
         )}
       </Modal>
