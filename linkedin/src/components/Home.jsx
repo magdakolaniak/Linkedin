@@ -1,16 +1,15 @@
-import { Col, Row, Container } from 'react-bootstrap';
+import { Col, Row, Container } from "react-bootstrap";
 
-import LateralProfiles from './LateralProfiles';
-import Feeds from './Feeds';
+import LateralProfiles from "./LateralProfiles";
+import Feeds from "./Feeds";
 
 const Home = () => (
   <Container className="home-main-container">
     <Row>
-      <Col md={2}></Col>
-      <Col md={7}>
+      <Col md={8}>
         <Feeds />
       </Col>
-      <Col md={3}>
+      <Col md={4} style={{ marginTop: "20px" }}>
         <LateralProfiles />
       </Col>
     </Row>
