@@ -32,7 +32,7 @@ class Feeds extends React.Component {
 
       if (response.ok) {
         let data = await response.json();
-        console.log(data[1].image);
+        console.log(data);
 
         this.setState({
           posts: data,
@@ -52,7 +52,7 @@ class Feeds extends React.Component {
     return (
       <>
         {!this.state.isLoading &&
-          this.state.posts.slice(0, 10).map((post) => (
+          this.state.posts.slice(599, 608).map((post) => (
             <Container className="feeds-main-container" key={post._id}>
               <BiDotsHorizontalRounded className="feeds-main-dots" />
               <Row>
@@ -79,7 +79,13 @@ class Feeds extends React.Component {
               </Row>
               <Row>
                 <div className="feeds-user-post mt-3 mb-5">"{post.text}"</div>
-                <img src={post.image} alt="" />
+                {post.image && (
+                  <img
+                    src={post.image}
+                    className="feeds-post-image"
+                    alt="..."
+                  />
+                )}
               </Row>
               <Row>
                 <hr></hr>
