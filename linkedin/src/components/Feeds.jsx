@@ -60,7 +60,7 @@ class Feeds extends React.Component {
                   <img
                     className="feeds-user-image"
                     src={post.user.image}
-                    alt=""
+                    alt="This should display user content"
                   />
                 </Col>
                 <Col sm={8} className="mr-auto">
@@ -79,7 +79,13 @@ class Feeds extends React.Component {
               </Row>
               <Row>
                 <div className="feeds-user-post mt-3 mb-5">"{post.text}"</div>
-                <img src={post.image} alt="" />
+                {post.image && (
+                  <img
+                    src={post.image}
+                    className="feeds-post-image"
+                    alt="..."
+                  />
+                )}
               </Row>
               <Row>
                 <hr></hr>

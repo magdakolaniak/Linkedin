@@ -1,4 +1,3 @@
-
 import { Navbar, Row, Nav, Form, FormControl, Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
@@ -12,7 +11,6 @@ import { IoMdArrowDropdown } from 'react-icons/io';
 import { GiAbstract050 } from 'react-icons/gi';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { withRouter, Link } from 'react-router-dom';
-
 
 const MyNavbar = () => (
   <div>
@@ -37,8 +35,8 @@ const MyNavbar = () => (
         </svg>
       </Navbar.Brand>
       <div className="magnify-glass-navbar">
-        {" "}
-        <AiOutlineSearch />{" "}
+        {' '}
+        <AiOutlineSearch />{' '}
       </div>
       <Form inline>
         <div>
@@ -50,76 +48,56 @@ const MyNavbar = () => (
         </div>
       </Form>
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mx-auto">
-          <div className="mt-3">
-            <Row className="mx-2 ">
-              <ImHome3 className="icons-navbar" />
-            </Row>
-            <Row className="mx-2">
-              <Nav.Link href="/me" className="navbar-rows-text">
-                {" "}
-                Main
-              </Nav.Link>
-            </Row>
-          </div>
-          <div className="mt-3">
-            <Row className="mx-2">
-              <BsFillPeopleFill className="icons-navbar" />
-            </Row>
-            <Row className="mx-2">
-              <Nav.Link href="/lateralprofiles" className="navbar-rows-text">
-                {" "}
-                Network
-              </Nav.Link>
-            </Row>
-          </div>
-          <div className="mt-3">
-            <Row className="mx-2">
-              <MdWork className="icons-navbar" />
-            </Row>
-            <Row className="mx-2 navbar-rows-text">
-              <p>Job offers</p>
-            </Row>
-          </div>
-          <div className="mt-3">
-            <Row className="mx-2">
-              <BiMessageRoundedDots className="icons-navbar" />
-            </Row>
-            <Row className="mx-2 navbar-rows-text">
-              <p>Messages</p>
-            </Row>
-          </div>
-          <div className="mt-3">
-            <Row className="mx-2">
-              <MdNotifications className="icons-navbar" />
-            </Row>
-            <Row className="mx-2 navbar-rows-text">
-              <p>Notifications</p>
-            </Row>
-          </div>
-          <div className="mt-3">
-            <Row className="mx-2">
-              <ImProfile className="icons-navbar" />
-            </Row>
-
-            <Row className="mx-2 navbar-rows-text">
-              <Nav.Link href="/me" className="navbar-rows-text">
-                <p>
-                  {' '}
-                  Me <IoMdArrowDropdown className="icons-navbar" />{' '}
-                </p>{' '}
-              </Nav.Link>
-            </Row>
-          </div>
-
-          <div className="mt-3 navbar-last-one">
-            <Row className="mx-2">
-              <GiAbstract050 className="icons-navbar" />
-            </Row>
-            <Row className="mx-2 navbar-rows-text">
-              <p>Jobs</p>
-            </Row>
-          </div>
+        <Nav className="navbar-icons-alignment">
+          <span className="navbar-icons-container">
+            <ImHome3 className="icons-navbar" />
+            <br></br>
+            <Link to="/home" className="navbar-rows-text">
+              Home
+            </Link>
+          </span>
+          <span className="navbar-icons-container">
+            <BsFillPeopleFill className="icons-navbar-network" />
+            <br></br>
+            <Link to="" className="navbar-rows-text">
+              Network
+            </Link>
+          </span>
+          <span className="navbar-icons-container">
+            <MdWork className="icons-navbar" />
+            <br></br>
+            <Link to="" className="navbar-rows-text">
+              Jobs
+            </Link>
+          </span>
+          <span className="navbar-icons-container">
+            <BiMessageRoundedDots className="icons-navbar-messages" />
+            <br></br>
+            <Link to="" className="navbar-rows-text">
+              Messages
+            </Link>
+          </span>
+          <span className="navbar-icons-container">
+            <MdNotifications className="icons-navbar-notifications" />
+            <br></br>
+            <Link to="" className="navbar-rows-text">
+              Notifications
+            </Link>
+          </span>
+          <span className="navbar-icons-container">
+            <ImProfile className="icons-navbar-me" />
+            <br></br>
+            <Link to="/profile/me" className="navbar-rows-text-me">
+              Me <IoMdArrowDropdown className="icons-navbar-dropdown" />
+            </Link>
+          </span>
+          <span className="navbar-icons-container-jobs">
+            <GiAbstract050 className="icons-navbar-work" />
+            <br></br>
+            <Link to="" className="navbar-rows-text">
+              Work <IoMdArrowDropdown className="icons-navbar-dropdown" />
+            </Link>
+          </span>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

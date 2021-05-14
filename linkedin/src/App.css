@@ -196,7 +196,7 @@ p#expTitle {
   background-color: white;
   margin-right: auto;
   margin-left: auto;
-  max-height: 60px;
+  max-height: 67px;
   position: fixed;
   top: 0;
   left: 0;
@@ -211,24 +211,79 @@ p#expTitle {
 }
 .icons-navbar {
   font-size: 20px;
-  color: rgb(114, 114, 114);
+  color: rgb(97, 97, 97);
+  margin-left: 6px;
+  align-self: center;
 }
+.icons-navbar-dropdown {
+  font-size: 20px;
+  color: rgb(97, 97, 97);
+  font-weight: 600;
+}
+.icons-navbar-network {
+  font-size: 20px;
+  color: rgb(114, 114, 114);
+  margin-left: 22px;
+  align-self: center;
+}
+.icons-navbar-messages {
+  font-size: 20px;
+  color: rgb(114, 114, 114);
+  margin-left: 20px;
+}
+.icons-navbar-notifications {
+  font-size: 20px;
+  color: rgb(114, 114, 114);
+  margin-left: 22px;
+}
+.icons-navbar-me {
+  font-size: 20px;
+  color: rgb(114, 114, 114);
+  margin-left: 16px;
+}
+.icons-navbar-work {
+  font-size: 20px;
+  color: rgb(114, 114, 114);
+  margin-left: 16px;
+}
+
 .navbar-rows-text {
   color: rgb(114, 114, 114);
   font-size: small;
   padding-top: 2px;
+  text-decoration: none;
 }
-.navbar-toggle-style {
-  background-color: white !important;
-  border: none !important;
-  padding: 0.175rem 0.25rem !important;
+.navbar-rows-text-me {
+  color: rgb(114, 114, 114);
+  font-size: small;
+  padding-top: 2px;
+  text-decoration: none;
+  margin-left: 5px;
 }
+.navbar-icons-alignment {
+  margin-left: 120px;
+}
+.navbar-icons-container {
+  margin-left: 30px;
+  margin-left: 30px;
+  padding: 10px;
+}
+.navbar-icons-container-jobs {
+  margin-left: 30px;
+  margin-left: 30px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-right-style: none;
+  border-bottom-style: none;
+}
+
 .navbar-searching-style {
   border-left-style: none;
   border-top-right-radius: 6px;
   border-top-left-radius: 0px;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 0px;
+  background-color: rgb(234, 234, 255);
 }
 .magnify-glass-navbar {
   border: 1px solid #ced4da;
@@ -238,6 +293,7 @@ p#expTitle {
   border-right-style: none;
   padding-bottom: 3px;
   padding-left: 8px;
+  background-color: rgb(234, 234, 255);
 }
 .navbar-searching-style:focus {
   color: black;
@@ -428,4 +484,15 @@ p#expTitle {
   stroke-width: 12px;
   margin-left: 20px;
   margin-right: 10px;
+}
+.feeds-post-image {
+  width: 400px;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  border-radius: 5%;
+}
+.home-main-container {
+  margin-top: 65px;
 }

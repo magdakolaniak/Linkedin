@@ -1,4 +1,3 @@
-import MyFooter from './components/MyFooter';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
@@ -8,12 +7,16 @@ import Profile from './components/Profile.jsx';
 import React from 'react';
 import MyNavbar from './components/MyNavbar';
 import Feeds from './components/Feeds';
+import MyFooter from './components/MyFooter';
+import Home from './components/Home';
 
 function App() {
   return (
     <div>
       <Router>
-        <Feeds />
+        <MyNavbar />
+        <Route component={Home} path="/home" />
+        <MyFooter />
       </Router>
     </div>
   );
