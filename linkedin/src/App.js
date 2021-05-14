@@ -13,11 +13,13 @@ function App() {
   return (
     <div>
       <Router>
+        <MyNavbar />
         <Route component={Feeds} path="/" exact />
-
         <Route component={Profile} path="/userprofile/:userId" />
+        <MyFooter />
       </Router>
     </div>
   );
 }
+
 export default App;
