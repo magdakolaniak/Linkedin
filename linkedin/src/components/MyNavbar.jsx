@@ -87,7 +87,7 @@ const MyNavbar = () => (
           <span className="navbar-icons-container">
             <ImProfile className="icons-navbar-me" />
             <br></br>
-            <Link to="/profile/me" className="navbar-rows-text-me">
+            <Link to="/userprofile/me" className="navbar-rows-text-me">
               Me <IoMdArrowDropdown className="icons-navbar-dropdown" />
             </Link>
           </span>

@@ -6,7 +6,7 @@ import Profile from './components/Profile.jsx';
 
 import React from 'react';
 import MyNavbar from './components/MyNavbar';
-import Feeds from './components/Feeds';
+
 import MyFooter from './components/MyFooter';
 import Home from './components/Home';
 

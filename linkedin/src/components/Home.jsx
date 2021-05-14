@@ -1,5 +1,5 @@
 import { Col, Row, Container } from 'react-bootstrap';
-import Interests from './Interests';
+
 import LateralProfiles from './LateralProfiles';
 import Feeds from './Feeds';
 
