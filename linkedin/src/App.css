@@ -95,7 +95,6 @@
   color: #0a66c2;
 }
 
-
 #experiencesContainer {
   background-color: white;
   border-radius: 10px 10px 10px 10px;
@@ -136,7 +135,62 @@ p#expTitle {
   color: rgb(156, 156, 156);
 }
 
+.expIcons {
+  font-size: 28px;
+  color: rgb(144, 144, 144);
+}
+.editIcon {
+  font-size: 20px;
+  color: rgb(144, 144, 144);
+  margin-right: 3px;
+}
+#addBack {
+  height: fit-content;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#addBack:hover {
+  background-color: rgb(238, 238, 238);
+  height: fit-content;
+  padding: 4px;
+  border-radius: 50%;
+}
+.editBack:hover {
+  background-color: rgb(238, 238, 238);
+  height: fit-content;
+  border-radius: 50%;
+  padding: 4px 4px 8px 8px;
+}
+.editBack {
+  height: fit-content;
+  border-radius: 50%;
+  padding: 4px 4px 8px 8px;
+  cursor: pointer;
+  z-index: 2;
+}
 
+#skipChanges {
+  position: absolute;
+  right: 15px;
+  bottom: 16px;
+}
+#deleteExp {
+  position: absolute;
+  left: 170px;
+  bottom: 16px;
+}
+
+#modalBack {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 60%;
+  z-index: 1000;
+}
 
 .bg-navbar {
   background-color: white;
@@ -201,12 +255,10 @@ p#expTitle {
   line-height: 1.33333;
 }
 .footer-main-row {
-
   /* position: fixed;
   bottom: 0; */
   left: 150px;
   right: 100px;
-
 
   margin-bottom: 15px;
 }
@@ -250,5 +302,130 @@ p#expTitle {
   padding-top: 110px;
 
   margin-bottom: 70px;
+}
+.modal-labels-text {
+  padding-left: 6px;
+  margin-top: 25px;
+}
+.feeds-main-container {
+  margin-top: 20px;
+  padding: 30px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: white;
+  position: relative;
+}
 
+.feeds-user-image {
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+.feeds-profile-username-link {
+  color: #000000;
+  font-weight: 600;
+  font-size: 1em;
+  margin: 0px;
+  margin-left: 15px;
+
+  text-decoration: none;
+}
+.feeds-user-text {
+  margin-left: 15px;
+  font-size: 14px;
+}
+.feeds-icons {
+  font-size: 18px;
+  margin-bottom: 3px;
+  margin-left: 10px;
+  font-weight: 600;
+  stroke: black;
+  stroke-width: 12px;
+}
+.feeds-group-icons {
+  margin-right: 10px;
+  padding: 10px;
+  color: #6c757d;
+  transition: all 0.2s ease-in-out;
+}
+.feeds-group-icons-like {
+  margin-right: 10px;
+  padding: 10px;
+  color: #6c757d;
+  transition: all 0.2s ease-in-out;
+}
+
+.feeds-icons-bottom {
+  font-size: 24px;
+}
+.text-comment {
+  margin-left: 10px;
+}
+.feeds-like-reactions {
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  left: 30px;
+  background-color: whitesmoke;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+
+  border-radius: 10px;
+}
+.feeds-group-icons-like:hover + .feeds-like-reactions {
+  display: inline;
+  background-color: white;
+  border-radius: 15px;
+  transform: scale(1);
+}
+.feeds-group-icons-like:hover {
+  display: inline;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  transform: scale(1);
+}
+
+.feeds-group-icons:hover {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  transform: scale(1);
+  display: inline;
+}
+.feeds-main-dots {
+  position: absolute;
+  top: 30px;
+  right: 70px;
+  font-size: 30px;
+
+  transition: all 0.2s ease-in-out;
+}
+.feeds-main-dots:hover {
+  background-color: whitesmoke;
+  border-radius: 10px;
+  transform: scale(1);
+}
+.feeds-heart-style {
+  font-size: 25px;
+}
+.feeds-heart-hand-style {
+  font-size: 25px;
+  color: blue;
+  stroke-width: 12px;
+  margin-left: 20px;
+}
+.feeds-bulb-style {
+  font-size: 30px;
+  color: rgb(201, 201, 15);
+  stroke-width: 12px;
+  margin-left: 20px;
+}
+.feeds-hands-style {
+  font-size: 30px;
+  color: green;
+  stroke-width: 12px;
+  margin-left: 20px;
+  margin-right: 10px;
 }
