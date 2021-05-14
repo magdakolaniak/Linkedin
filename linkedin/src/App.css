@@ -135,6 +135,63 @@ p#expTitle {
   color: rgb(156, 156, 156);
 }
 
+.expIcons {
+  font-size: 28px;
+  color: rgb(144, 144, 144);
+}
+.editIcon {
+  font-size: 20px;
+  color: rgb(144, 144, 144);
+  margin-right: 3px;
+}
+#addBack {
+  height: fit-content;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#addBack:hover {
+  background-color: rgb(238, 238, 238);
+  height: fit-content;
+  padding: 4px;
+  border-radius: 50%;
+}
+.editBack:hover {
+  background-color: rgb(238, 238, 238);
+  height: fit-content;
+  border-radius: 50%;
+  padding: 4px 4px 8px 8px;
+}
+.editBack {
+  height: fit-content;
+  border-radius: 50%;
+  padding: 4px 4px 8px 8px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+#skipChanges {
+  position: absolute;
+  right: 15px;
+  bottom: 16px;
+}
+#deleteExp {
+  position: absolute;
+  left: 170px;
+  bottom: 16px;
+}
+
+#modalBack {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 60%;
+  z-index: 1000;
+}
+
 .bg-navbar {
   background-color: white;
   margin-right: auto;
