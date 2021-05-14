@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,11 +10,13 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
 /* Beginning CSS Leonardo */
+
+/* Lateral Profiles */
 
 #lateral-profile-main-container {
   width: 100%;
@@ -77,4 +79,75 @@ code {
 #lateral-profile-info-box {
   margin-left: 20px;
 }
+
+#feed-post-user-image {
+}
+
+/* End Lateral Profiles */
+
+/* Feed Posts */
+
+#feed-post-main-container {
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+#feed-post {
+  margin-top: 0;
+}
+
+#feed-post-user-image {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+#feed-post-username {
+  color: #000000;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin: 0px;
+}
+#feed-post-username-link {
+  color: #000000;
+  font-weight: 600;
+  font-size: 1em;
+  margin: 0px;
+  padding-left: 1px;
+}
+
+#like-icons-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#like-icon {
+  margin: 0px 10px;
+}
+
+#feed-post-img-banner {
+  padding: 10px;
+  background-color: #f5f8ff;
+  margin-bottom: 10px;
+}
+
+#feed-post-img {
+  width: 100%;
+  max-height: 120px;
+}
+
+#feed-post-likes-bar {
+  padding: 5px 0px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* End Feed Posts */
+
 /* End CSS Leonardo */
