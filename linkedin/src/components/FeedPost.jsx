@@ -73,7 +73,7 @@ class FeedPost extends React.Component {
               </div>
               <div>
                 <div>
-                  <img src={PostImg} alt="" id="feed-post-img" />
+                  <img src={item.image} alt="" id="feed-post-img" />
                   <div id="feed-post-img-banner">
                     <h3 id="">{item.text}</h3>
                     <p id="">
