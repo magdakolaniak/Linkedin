@@ -12,6 +12,7 @@ class ExperienceModal extends React.Component {
       area: "",
     },
     deleteConfirm: false,
+    picture: "",
   };
 
   handleChange = (e) => {
@@ -27,6 +28,7 @@ class ExperienceModal extends React.Component {
     e.preventDefault();
     this.props.closeModal();
     this.props.addNewExp(this.state.newExperience);
+    // this.setState({ picture: e.target.files[0] });
     // let method = "";
     // if (this.props.addingMode) {
     //   method = "post";
@@ -85,6 +87,32 @@ class ExperienceModal extends React.Component {
     } catch (error) {
       alert(error.message);
     }
+
+    try {
+      let formData = new FormData();
+      formData.append("experience", this.state.picture);
+      // console.log(formData)
+
+      let response2 = await fetch(
+        `https://striveschool-api.herokuapp.com/api/profile/${this.props.isMe}/experiences/${this.props.selectedExp}/picture`,
+        {
+          method: "post",
+          headers: {
+            Authorization:
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDk5MTg2YTYxOWU1ZDAwMTUxZjhmODYiLCJpYXQiOjE2MjA2NDU5OTQsImV4cCI6MTYyMTg1NTU5NH0.CDHfsm4R57ghD9yYwMqF32cuot43P72UHjId5uHn8l0",
+          },
+          body: formData,
+        }
+      );
+
+      if (!response2.ok) {
+        throw new Error("company logo didn't uploaded");
+      } else {
+        this.closeModal();
+      }
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   resetState = () => {
@@ -96,6 +124,7 @@ class ExperienceModal extends React.Component {
         endDate: "",
         description: "",
         area: "",
+        picture: "",
       },
       deleteConfirm: false,
     });
@@ -212,6 +241,26 @@ class ExperienceModal extends React.Component {
                       value={this.state.newExperience.company}
                       onChange={(e) => this.handleChange(e)}
                     />
+                  </Form.Group>
+                  <Form.Group className="mt-2">
+                    {/* <Form.File
+                      id="exampleFormControlFile1"
+                      value={this.state.picture}
+                      onChange={(e) =>
+                        this.setState({ picture: e.target.files[0] })
+                      }
+                    /> */}
+                    {this.props.editingMode && (
+                      <label className="custom-file-upload">
+                        <input
+                          type="file"
+                          multiple
+                          onChange={(e) =>
+                            this.setState({ picture: e.target.files[0] })
+                          }
+                        />
+                      </label>
+                    )}
                   </Form.Group>
                 </Form.Row>
 

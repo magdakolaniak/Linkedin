@@ -74,7 +74,10 @@ class Profile extends Component {
         <Row>
           <Col md={8}>
             {this.state.loadingFinished && (
-              <Header profileData={this.state.profileData} />
+              <Header
+                profileData={this.state.profileData}
+                isMe={this.props.match.params.userId}
+              />
             )}
             {this.state.loadingFinished && (
               <Experiences

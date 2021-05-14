@@ -137,7 +137,7 @@ class Experiences extends React.Component {
           return (
             <Row key={elem._id}>
               <Col sm={1}>
-                <img src="https://picsum.photos/seed/picsum/65/65" alt=""></img>
+                <img id="experiencePicture" src={elem.image} alt=""></img>
               </Col>
               <Col id="descriptions">
                 <div
