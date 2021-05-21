@@ -150,4 +150,89 @@ code {
 
 /* End Feed Posts */
 
+/* Create Post */
+.create-post-input {
+  border-radius: 60px;
+  width: 100%;
+  background-color: transparent;
+  padding: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #818181;
+}
+
+.create-post-input:hover {
+  background-color: #f3f3f3;
+  color: #818181;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.feeds-icons-bottom-photo {
+  color: #87d7fc;
+  margin-right: 4px;
+}
+
+.feeds-icons-bottom-video {
+  color: #66c27a;
+  margin-right: 4px;
+}
+
+.feeds-icons-bottom-event {
+  color: #fce187;
+  margin-right: 4px;
+}
+
+.feeds-icons-bottom-article {
+  color: #fc9e87;
+  margin-right: 4px;
+}
+
+.post-post-username {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 60px;
+  margin-right: 20px;
+}
+
+.insert-post-text-input {
+  border: none;
+  min-height: 200px;
+  width: 100%;
+  align-items: flex-start;
+  display: flex;
+}
+
+.icon-post {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.add-hashtag-post {
+  color: #0079b1;
+  font-size: 1.2em;
+}
+
+.list-icons-post {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-post-post {
+  font-size: 1.2em;
+  color: #818181;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.icon-post-post:hover {
+  background-color: #4e4e4e;
+}
+
+.icon-active {
+  color: #0079b1 !important;
+}
+/* End Create Post */
+
 /* End CSS Leonardo */
